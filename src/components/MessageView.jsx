@@ -176,8 +176,6 @@ const handleSubmit = async (e) => {
 };
 
 
-
-
   const handleEditSubmit = async () => {
     if (!editedContent.trim()) return;
     try {
@@ -361,7 +359,8 @@ const handleSubmit = async (e) => {
       <div className="p-4 dark:bg-black w-full">
         <div className="max-w-4xl  mx-auto">
           <form onSubmit={handleSubmit} className="relative">
-            <textarea
+            <div className='flex items-center justify-center'>
+              <textarea
               ref={textareaRef}
               rows={1}
               value={newMessage}
@@ -373,16 +372,17 @@ const handleSubmit = async (e) => {
                 }
               }}
               placeholder="Message here.."
-              className="w-full p-4 pr-16 bg-white dark:bg-black border-2 border-gray-300 dark:border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400 transition-shadow text-gray-900 dark:text-foreground placeholder-gray-500 dark:placeholder-muted-foreground overflow-y-hidden resize-none"
+              className="w-full p-4 pr-16 bg-white dark:bg-black border-2 border-gray-300 dark:border-border rounded-xl focus:outline-none focus:ring focus:ring-green-400 transition-shadow text-gray-900 dark:text-foreground placeholder-gray-500 dark:placeholder-muted-foreground overflow-y-hidden resize-none"
               style={{ maxHeight: '200px' }}
             />
             <button
               type="submit"
               disabled={!newMessage.trim() || sendingMessage}
-              className="absolute right-3.5 bottom-3 p-2 bg-black text-gray-400 rounded-lg disabled:bg-muted disabled:text-muted-foreground transition-colors"
+              className="absolute right-3.5 p-2 bg-gray-100 dark:bg-gray-800 text-green-400 rounded-lg  transition-colors"
             >
-              {sendingMessage ? <Loader2 className="animate-spin" size={20} /> : <SendHorizonal size={20} />}
+              {sendingMessage ? <Loader2 className="animate-spin" size={20} /> : <SendHorizonal size={20} className='text-green-400 ' />}
             </button>
+            </div>
           </form>
         </div>
       </div>

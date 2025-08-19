@@ -3,7 +3,7 @@ import { useSignUpEmailPassword } from '@nhost/react';
 import { Link } from 'react-router-dom';
 import AuthLayout from '../components/AuthLayout';
 import { Toaster, toast } from 'react-hot-toast';
-import { MailCheck, ArrowRight } from 'lucide-react';
+import { MailCheck, ArrowRight, User, Lock, UserRoundPlus } from 'lucide-react';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -69,7 +69,7 @@ const SignUp = () => {
         Already have an account?{' '}
         <Link
           to="/sign-in"
-          className="inline-block font-medium bg-gray-600 dark:bg-gray-700 text-white rounded-xl px-1 py-0.5 transition-colors hover:bg-gray-700 dark:hover:bg-gray-600"
+          className="inline-block font-medium bg-gray-300/80 rounded-xl px-1 py-0.5 text-gray-600 hover:shadow-sm hover:shadow-black/30 border-2 border-gray-400/10 duration-300"
         >
           Sign In
         </Link>
@@ -83,22 +83,28 @@ const SignUp = () => {
           </div>
         )}
         <div className="space-y-4 text-black">
+          <div className="flex items-center justify-center rounded-lg mb-4 p-2 gap-2 bg-gray-200 outline-2 outline-gray-300 focus-within:outline-gray-400/80 focus-within:shadow-md focus-within:shadow-violet-200 transition-all duration-300 ease-in-out">
+          <UserRoundPlus size={22} className="text-gray-700" />
           <input
             type="email"
+            placeholder="Email here.."
+            className="montserrat-medium text-sm text-black w-full bg-gray-200 placeholder:text-sm placeholder-gray-500/60 outline-none "
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            placeholder="Email here.."
-            className="flex items-center justify-center rounded-lg w-full mb-4 p-2 gap-2 text-gray-700 bg-gray-200 outline-2 outline-gray-300 focus-within:outline-gray-400/80 focus-within:shadow-md focus-within:shadow-violet-200 transition-all duration-300 ease-in-out"
           />
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            placeholder="Your Password here.."
-            className="flex items-center justify-center rounded-lg w-full mb-4 p-2 gap-2 bg-gray-200 border-gray-300 outline-2 outline-gray-300 focus-within:outline-gray-400/80 focus-within:shadow-md focus-within:shadow-violet-200 transition-all duration-300 ease-in-out"
-          />
+        </div>
+        <div className='flex items-center justify-center rounded-lg mb-4 p-2 gap-2 bg-gray-200 outline-2 outline-gray-300 focus-within:outline-gray-400/80 focus-within:shadow-md focus-within:shadow-violet-200 transition-all duration-300 ease-in-out'>
+          <Lock size={22} className='text-gray-700' />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          className="montserrat-medium text-sm text-black w-full bg-gray-200 placeholder:text-sm placeholder-gray-500/60 outline-none "
+          placeholder="Your Password here.."
+        />
+        </div>
         </div>
         <div className="flex items-center justify-center">
           <button
