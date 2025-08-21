@@ -11,21 +11,30 @@ mutation CreateChat($title: String!, $user_id: uuid!) {
 
 export const INSERT_USER_MESSAGE_MUTATION = gql`
  mutation InsertUserMessage($chat_id: uuid!, $content: String!) {
-  insert_messages_one(object: { chat_id: $chat_id, content: $content, role: "user" }) {
+  insert_messages_one(object: { chat_id: $chat_id, content: $content}) {
     id
+    content
   }
 }
 `;
 
 
 
-export const SEND_MESSAGE_ACTION = gql`
-mutation SendMessage($chat_id: uuid!, $user_id: uuid!, $message: String!) {
-  sendMessage(input: { chat_id: $chat_id, user_id: $user_id, message: $message }) {
-    reply
+export const SEND_MESSAGE = gql`
+  mutation SendMessage($chat_id: uuid!, $user_id: uuid!, $content: String!) {
+    sendMessage(chat_id: $chat_id, user_id: $user_id, content: $content) {
+      success
+      message
+      botReply {
+        id
+        content
+        sender
+        created_at
+      }
+    }
   }
-}
 `;
+
 
 export const UPDATE_CHAT_TITLE_MUTATION = gql`
   mutation UpdateChatTitle($id: uuid!, $title: String!) {

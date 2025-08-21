@@ -4,7 +4,7 @@ import { useUserData } from '@nhost/react';
 import { MESSAGES_SUBSCRIPTION } from '../graphql/subscriptions';
 import {
   INSERT_USER_MESSAGE_MUTATION,
-  SEND_MESSAGE_ACTION,
+  SEND_MESSAGE,
   UPDATE_MESSAGE_MUTATION,
   DELETE_MESSAGE_MUTATION
 } from '../graphql/mutations';
@@ -98,7 +98,8 @@ const MessageView = ({ chatId, isSidebarOpen, setIsSidebarOpen }) => {
     skip: !chatId
   });
 
-  const [sendMessageAction, { loading: sendingMessage }] = useMutation(SEND_MESSAGE_ACTION, {
+   const [InsertUserMessage] = useMutation(INSERT_USER_MESSAGE_MUTATION);
+  const [sendMessageAction, { loading: sendingMessage }] = useMutation(SEND_MESSAGE, {
     onError: (err) => toast.error(`Chatbot error: ${err.message}`)
   });
 
@@ -132,48 +133,40 @@ const MessageView = ({ chatId, isSidebarOpen, setIsSidebarOpen }) => {
 const handleSubmit = async (e) => {
   e.preventDefault();
   const messageContent = newMessage.trim();
-  if (!messageContent) return;
-
-  if (!chatId) {
-    toast.error("Cannot send message: chat not selected!");
-    return;
-  }
-
-  if (!userData?.id) {
-    toast.error("User not authenticated");
-    return;
-  }
-
-  if (sendingMessageLocal) return;
+  if (!messageContent || !chatId || sendingMessageLocal) return;
 
   setNewMessage('');
   setSendingMessageLocal(true);
 
   try {
-    const response = await sendMessageAction({
+    // 1. Insert the user's message into messages table
+    await InsertUserMessage({
       variables: {
         chat_id: chatId,
-        message: messageContent,
-        user_id: userData.id,
+        content: messageContent,
       },
     });
 
-    console.log("Full mutation response:", response);
+    // 2. Call the Hasura Action to get bot reply
+    await sendMessageAction({
+      variables: {
+        chat_id: chatId,
+        user_id: userData.id,
+        content: messageContent,
+      },
+    });
 
-    const reply = response?.data?.sendMessage?.reply;
-    if (reply) {
-      console.log("Chatbot reply:", reply);
-    } else {
-      console.warn("Reply not found in response.");
-      toast.error("No reply returned from webhook. Check console.");
-    }
+    // Subscription will automatically pick up both user + assistant messages
   } catch (err) {
-    console.error("Mutation error:", err);
-    toast.error("Error sending message.");
+    console.error("Error sending message:", err);
+    toast.error("Failed to send message.");
+    setNewMessage(messageContent); // put message back in input if failed
   } finally {
     setSendingMessageLocal(false);
   }
 };
+
+
 
 
   const handleEditSubmit = async () => {
