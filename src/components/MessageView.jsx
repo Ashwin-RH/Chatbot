@@ -185,7 +185,7 @@ const handleSubmit = async (e) => {
   // ---------------- Conditional rendering if no chat is selected ----------------
   if (!chatId) {
     return (
-      <div className="flex-grow flex items-center dark:bg-black justify-center h-screen relative">
+      <div className="flex-grow flex items-center  dark:bg-black justify-center h-screen relative">
         <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           className="absolute top-4 left-4 p-2 rounded-md text-gray-500 dark:text-muted-foreground hover:bg-gray-100 dark:hover:bg-accent"
@@ -240,14 +240,15 @@ const handleSubmit = async (e) => {
   // ---------------- Main Render ----------------
   return (
     <div className="flex-grow flex flex-col h-screen relative">
-      <div className="absolute top-4 left-4 z-50">
-        <button
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="p-2 rounded-md text-gray-500 dark:text-muted-foreground hover:bg-gray-100 dark:hover:bg-accent"
-        >
-          <MenuIcon size={24} />
-        </button>
-      </div>
+      <div className="top-4 left-4 z-50 md:absolute fixed">
+      <button
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        className="p-2 rounded-md text-gray-500 dark:text-muted-foreground hover:bg-gray-100 dark:hover:bg-accent"
+      >
+        <MenuIcon size={24} />
+      </button>
+    </div>
+
       <Toaster />
       <div className="flex-grow dark:bg-black overflow-y-auto">
         <div className="max-w-4xl bg-white dark:bg-black w-full mx-auto px-4 pt-20 pb-10 space-y-8">
