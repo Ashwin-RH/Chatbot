@@ -240,7 +240,7 @@ const handleSubmit = async (e) => {
   // ---------------- Main Render ----------------
   return (
     <div className="flex-grow flex flex-col h-screen relative">
-      <div className="absolute top-4 left-4 z-10">
+      <div className="absolute top-4 left-4 z-50">
         <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           className="p-2 rounded-md text-gray-500 dark:text-muted-foreground hover:bg-gray-100 dark:hover:bg-accent"
