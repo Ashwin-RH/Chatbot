@@ -185,7 +185,7 @@ const handleSubmit = async (e) => {
   // ---------------- Conditional rendering if no chat is selected ----------------
   if (!chatId) {
     return (
-      <div className="flex-grow flex items-center dark:bg-black justify-center h-full relative">
+      <div className="flex-grow flex items-center dark:bg-black justify-center h-screen relative">
         <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           className="absolute top-4 left-4 p-2 rounded-md text-gray-500 dark:text-muted-foreground hover:bg-gray-100 dark:hover:bg-accent"
