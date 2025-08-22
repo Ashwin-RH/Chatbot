@@ -66,14 +66,23 @@ const SignUp = () => {
           Create Account
         </h2>
         <p className="mt-2 text-gray-300/80 text-sm">
-          Already have an account?{' '}
-          <Link
-            to="/sign-in"
-            className="text-[15px] font-medium bg-gray-800/80 rounded-lg px-1 py-0.5 bg-gradient-to-r from-green-300 to-blue-400 bg-clip-text text-transparent hover:border-gray-300/40 border-2 border-gray-400/30 duration-300"
-          >
-            Sign In
-          </Link>
-        </p>
+  Already have an account?{' '}
+  <Link
+    to="/sign-in"
+    className="
+      whitespace-nowrap
+      text-[15px] font-medium
+      bg-gray-800/80 rounded-lg px-1 py-0.5
+      bg-gradient-to-r from-green-300 to-blue-400
+      bg-clip-text text-transparent
+      hover:border-gray-300/40 border-2 border-gray-400/30
+      duration-300
+    "
+  >
+    Sign In
+  </Link>
+</p>
+
       </div>
 
       <form onSubmit={handleSignUp} className="space-y-6">

@@ -27,12 +27,24 @@ const SignIn = () => {
         <h2 className="text-3xl bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent font-bold">
           Sign In
         </h2>
-        <p className="mt-2 text-gray-300/80 text-sm">
-          Don't have an account?{' '}
-          <Link to="/sign-up" className="text-[15px] font-medium bg-gray-800/80 rounded-lg px-1 py-0.5 bg-gradient-to-r from-green-300 to-blue-400 bg-clip-text text-transparent hover:border-gray-300/40 border-2 border-gray-400/30 duration-300">
-            Sign Up
-          </Link>
-        </p>
+        <p className="mt-2 text-gray-300/80 text-sm ">
+  Don't have an account?{' '}
+  <Link
+    to="/sign-up"
+    className="
+      whitespace-nowrap
+      text-[15px] font-medium
+      bg-gray-800/80 rounded-lg px-1 py-0.5
+      bg-gradient-to-r from-green-300 to-blue-400
+      bg-clip-text text-transparent
+      hover:border-gray-300/40 border-2 border-gray-400/30
+      duration-300
+    "
+  >
+    Sign Up
+  </Link>
+</p>
+
       </div>
       <form onSubmit={handleSignIn} className="space-y-6">
         {isError && (
