@@ -4,16 +4,16 @@ import { motion } from 'framer-motion';
 
 const AuthLayout = ({ children }) => {
   return (
-    <div className="flex flex-col h-screen w-full items-center justify-center bg-gradient-to-r from-violet-300 via-pink-200 to-indigo-300 px-4 relative overflow-y-hidden">
+    <div className="flex flex-col h-screen w-full items-center justify-center bg-gradient-to-br from-black/40  to-black/80 px-4 relative overflow-y-hidden">
 
       {/* Branding Title */}
-      <div className="absolute top-32 md:top-48 text-black text-4xl md:text-5xl font-semibold z-10 text-center w-full">
+      <div className="absolute top-32 md:top-48 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent text-4xl md:text-5xl font-semibold z-10 text-center w-full">
         C
-        <span className="text-2xl md:text-3xl font-semibold">ONVO</span>
+        <span className="text-2xl  md:text-3xl font-semibold">ONVO</span>
       </div>
 
       {/* Auth Card */}
-      <div className="flex items-center justify-center w-[19rem] md:w-[28rem] h-auto md:h-[40vh] min-h-[320px] overflow-hidden bg-white rounded-2xl shadow-2xl shadow-black/40 relative z-20 p-4">
+      <div className="flex items-center justify-center w-[19rem] md:w-[28rem] h-auto md:h-[40vh] min-h-[320px] overflow-hidden bg-gray-950/50 border border-gray-600 rounded-2xl shadow-lg focus-within:shadow-blue-500/30 background-blur-8px transition-all duration-500 relative z-20 p-4">
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}

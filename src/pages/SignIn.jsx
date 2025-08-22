@@ -24,12 +24,12 @@ const SignIn = () => {
     >
       <Toaster />
       <div className="text-center  mb-8">
-        <h2 className="text-3xl text-black font-bold">
+        <h2 className="text-3xl bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent font-bold">
           Sign In
         </h2>
-        <p className="mt-2 text-gray-600 text-sm">
+        <p className="mt-2 text-gray-300/80 text-sm">
           Don't have an account?{' '}
-          <Link to="/sign-up" className="font-medium bg-gray-300/80 rounded-xl px-1 py-0.5 text-gray-600 hover:shadow-sm hover:shadow-black/30 border-2 border-gray-400/10 duration-300">
+          <Link to="/sign-up" className="text-[15px] font-medium bg-gray-800/80 rounded-lg px-1 py-0.5 bg-gradient-to-r from-green-300 to-blue-400 bg-clip-text text-transparent hover:border-gray-300/40 border-2 border-gray-400/30 duration-300">
             Sign Up
           </Link>
         </p>
@@ -41,25 +41,25 @@ const SignIn = () => {
           </div>
         )}
         <div className="space-y-4">
-        <div className="flex items-center justify-center rounded-lg mb-4 p-2 gap-2 bg-gray-200 outline-2 outline-gray-300 focus-within:outline-gray-400/80 focus-within:shadow-md focus-within:shadow-violet-200 transition-all duration-300 ease-in-out">
-          <User size={22} className="text-gray-700" />
+        <div className="flex items-center justify-center rounded-lg mb-4 p-2 gap-2 bg-transparent border border-gray-400 outline-2 outline-gray-300 focus-within:outline-gray-400/80 focus-within:shadow-sm focus-within:shadow-violet-200 transition-all duration-300 ease-in-out">
+          <User size={22} className="text-blue-400" />
           <input
             type="email"
             placeholder="Email here.."
-            className="montserrat-medium text-sm text-black w-full bg-gray-200 placeholder:text-sm placeholder-gray-500/60 outline-none "
+            className="montserrat-medium text-sm text-white w-full bg-transparent placeholder:text-sm placeholder-gray-100/70 outline-none "
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
-        <div className='flex items-center justify-center rounded-lg mb-4 p-2 gap-2 bg-gray-200 outline-2 outline-gray-300 focus-within:outline-gray-400/80 focus-within:shadow-md focus-within:shadow-violet-200 transition-all duration-300 ease-in-out'>
-          <Lock size={22} className='text-gray-700' />
+        <div className='flex items-center justify-center rounded-lg mb-4 p-2 gap-2 bg-transparent border border-gray-400 outline-2 outline-gray-300 focus-within:outline-gray-400/80 focus-within:shadow-sm focus-within:shadow-violet-200 transition-all duration-300 ease-in-out'>
+          <Lock size={22} className='text-blue-400' />
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="montserrat-medium text-sm text-black w-full bg-gray-200 placeholder:text-sm placeholder-gray-500/60 outline-none "
+          className="montserrat-medium text-sm text-white w-full bg-transparent placeholder:text-sm placeholder-gray-100/70 outline-none "
           placeholder="Your Password here.."
         />
         </div>
@@ -69,7 +69,7 @@ const SignIn = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="border-2 border-gray-200 text-md font-semibold text-gray-600 hover:text-white px-10 py-2 rounded-xl hover:bg-gradient-to-br from-black via-black/80 to-black bg-gray-300  cursor-pointer duration-500 transition-all transform-gpu active:scale-95 hover:scale-102"
+            className="border-2 border-green-400 bg-gray-900 text-md font-semibold text-green-400 hover:text-white px-10 py-2 rounded-xl hover:bg-green-400/80 active:scale-95 cursor-pointer duration-500 transition-all transform-gpu active:scale-95 hover:scale-102"
           >
             {isLoading ? 'Authenticating...' : 'Sign In'}
             {/* <ArrowRight

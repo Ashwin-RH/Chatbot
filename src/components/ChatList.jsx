@@ -183,7 +183,10 @@ const ChatList = ({ selectedChatId, onSelectChat }) => {
 
         {/* Header */}
         <div className="p-4 bg-white dark:bg-black/40 my-1 background-blur-xl border-b border-gray-100 dark:border-border flex justify-between rounded-xl items-center flex-shrink-0">
-          <h2 className="text-lg font-semibold font-mont text-gray-900 dark:text-foreground">
+          <h2 className="text-xl font-semibold pl-12
+  bg-gradient-to-r from-green-400 to-blue-400
+  bg-clip-text text-transparent
+  font-mont">
             Convo
           </h2>
           <div className="flex items-center gap-2">
@@ -248,7 +251,7 @@ const ChatList = ({ selectedChatId, onSelectChat }) => {
                       }}
                       className="p-1 rounded dark:text-muted-foreground hover:bg-black/20 dark:hover:bg-white/10"
                     >
-                      <Pencil size={14} className="text-gray-700" />
+                      <Pencil size={14} className="text-gray-700 dark:text-gray-100" />
                     </button>
                     <button
                       onClick={(e) => {
