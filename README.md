@@ -7,7 +7,7 @@ This project was created as part of the Intern Assessment for Subspace.
 
 ### **✨ Live Demo & Showcase**
 
-* **Deployed Site:** `https://subspaceaichatbot.netlify.app/`
+* **Deployed Site:** `https://convo-ashwin.netlify.app/`
 
 ---
 ## About The Project
@@ -17,11 +17,11 @@ It is powered by a secure, serverless, GraphQL-native stack and comes with a pol
 
 The app adheres strictly to the assignment’s requirements:
 
-Security-first design
+* Security-first design
 
-GraphQL-only API layer
+* GraphQL-only API layer
 
-Clean separation of frontend and automation backend
+* Clean separation of frontend and automation backend
 
 ---
 ## Core Technologies
@@ -71,7 +71,7 @@ To run this project locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/Chaithanyaina/T-ai-chatbot-app.git
+    git clone https://github.com/Ashwin-RH/Chatbot.git
     cd T-ai-chatbot-app
     ```
 2.  **Install dependencies:**
@@ -102,11 +102,9 @@ To run this project locally, follow these steps:
 
 The current application serves as a robust and feature-complete foundation. The following enhancements are planned to further expand its capabilities:
 
-* **File and Image Uploads:** Integrate Nhost Storage to allow users to upload images and documents. This would be coupled with a multi-modal AI model, enabling the chatbot to analyze, summarize, and discuss the content of the uploaded files.
+* **File and Image Uploads:** with AI-powered analysis
 
-* **Global Chat Search:** Implement a powerful, full-text search functionality, allowing users to instantly find specific messages or information across their entire conversation history.
+* **Global Chat Search:** instant message lookup across history
 
-* **Deep Personal Finance Integration:** Further develop the "Subspace Pro" persona into an indispensable financial assistant by adding specialized tools. This could include features for:
-    * Analyzing spending patterns from uploaded bank statements.
-    * Tracking subscription price changes over time.
-    * Offering proactive savings advice based on user data.
+* **Deep Personal Finance Integration:** Imagine chatting with "Convo" like your own financial buddy. You could upload a bank statement, and it would break down your spending patterns in seconds. It would even keep an eye on your subscriptions—letting you know if prices go up or if you’re paying for something you don’t use. On top of that, it could suggest smart ways to save, tailored to your habits and goals.  
+
