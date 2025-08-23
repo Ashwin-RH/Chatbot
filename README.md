@@ -1,20 +1,27 @@
-# Subspace Pro AI Assistant 🚀
+# Convo AI Assistant 🤖 🚀
 
-A full-stack, real-time, and secure AI chatbot application built to showcase modern web development practices. This project was created as part of the Intern Assessment for Subspace.
+A modern, secure, and real-time AI chatbot application built to showcase advanced full-stack web development practices.
+This project was created as part of the Intern Assessment for Subspace.
 
 ---
 
 ### **✨ Live Demo & Showcase**
 
 * **Deployed Site:** `https://subspaceaichatbot.netlify.app/`
-* **Video Walkthrough:** `https://tinyurl.com/44fpbw33`
 
 ---
 ## About The Project
 
-**Subspace Pro** is a sophisticated AI assistant designed for real-time, intelligent conversations. The application is built from the ground up on a modern, serverless, GraphQL-native architecture. It features a polished, responsive user interface with advanced conversational features like chat history management, markdown rendering, and the ability to edit and regenerate responses.
+Convo is a next-generation AI assistant designed for real-time, intelligent conversations.
+It is powered by a secure, serverless, GraphQL-native stack and comes with a polished UI that supports markdown, code highlighting, chat history, editing, and smooth animations.
 
-The entire project adheres strictly to the assignment's requirements, focusing on security, a GraphQL-only API, and a clean separation of concerns between the frontend and a secure automation backend.
+The app adheres strictly to the assignment’s requirements:
+
+Security-first design
+
+GraphQL-only API layer
+
+Clean separation of frontend and automation backend
 
 ---
 ## Core Technologies
