@@ -7,7 +7,7 @@ This project was created as part of the Intern Assessment for Subspace.
 
 ### **✨ Live Demo & Showcase**
 
-* **Deployed Site:** `https://convo-ashwin.netlify.app/`
+* **Deployed Site:** `https://convo-ashwin.netlify.app`
 
 ---
 ## About The Project
