@@ -265,18 +265,22 @@ const handleSubmit = async (e) => {
                 transition={{ duration: 0.3 }}
               >
                 <div
-                  className={clsx('flex items-start gap-4 group', {
+                  className={clsx('flex items-start  gap-4 group ', {
                     'flex-row-reverse': msg.role === 'user'
                   })}
                 >
                   <Avatar role={msg.role} userData={userData} />
                   <div
-                    className={clsx('p-4 rounded-xl shadow-md max-w-xl', {
-                      'bg-green-500 text-white': msg.role === 'user',
-                      'bg-white dark:bg-gray-950 border dark:border-gray-600 text-gray-900 dark:text-secondary-foreground':
-                        msg.role === 'assistant'
-                    })}
-                  >
+  className={clsx(
+    'p-3 rounded-xl shadow-md max-w-xl',
+    {
+      'border border-green-500 bg-green-200 text-white dark:bg-gray-950 dark:text-white': msg.role === 'user',
+      'bg-white dark:bg-gray-950 border dark:border-gray-600 text-gray-900 dark:text-gray-200': msg.role === 'assistant'
+    }
+  )}
+>
+
+
                     {editingMessageId === msg.id ? (
                       <textarea
                         value={editedContent}
@@ -372,7 +376,7 @@ const handleSubmit = async (e) => {
             <button
               type="submit"
               disabled={!newMessage.trim() || sendingMessage}
-              className="absolute right-3.5 p-2 bg-gray-100 dark:bg-gray-800 text-green-400 rounded-lg  transition-colors"
+              className="absolute right-3.5 p-2 bg-gray-200/60 dark:bg-gray-800 text-green-400 rounded-lg  transition-colors"
             >
               {sendingMessage ? <Loader2 className="animate-spin" size={20} /> : <SendHorizonal size={20} className='text-green-400 ' />}
             </button>

@@ -8,8 +8,8 @@ const Avatar = ({ role, userData }) => {
 
   return (
     <div className={clsx(
-      'w-8 h-8 rounded-full flex items-center justify-center text-white bg-green-500 flex-shrink-0',
-      isUser ? 'bg-green-600' : 'bg-gray-600 dark:bg-gray-700'
+      'w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0',
+      isUser ? 'bg-green-500 dark:bg-gray-800 text-gray-100 dark:text-green-400 border-2 border-green-300 dark:border-green-500' : 'text-white bg-gray-600 dark:bg-gray-700 border-2 border-gray-100 dark:border-gray-500'
     )}>
       {isUser ? (
         <span className="font-semibold">{initial}</span>
